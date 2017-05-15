@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: I Try Do
+title: TryCatch Blog
 subtitle:
-description: 不积跬步无以至千里
-author: wsen
+description: 千里之行，始于足下
+author: TryCatch
 language: zh-Hans
-timezone:
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -67,7 +67,7 @@ theme: next
 
 baidu_url_submit:
   count: 1 ## 提交最新的一个链接
-  host: wuyuedefeng.github.io/ ## 在百度站长平台中注册的域名
+  host: guoyoujin.github.io/ ## 在百度站长平台中注册的域名
   token: your_token ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
   path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
 
@@ -79,8 +79,8 @@ search:
 
 # Admin
 admin:
-  username: wsen
-  password_hash: $2a$06$agYQF17tE.Rf/QBCVc943.Oj5RKe1Iy6dEDi7TReVSve7WYUJJYrW
+  username: guoyoujin
+  password_hash: $2a$10$ng5RPH2Tsz2d6E2uxaoBX.nPcRKyXQ4AsIRz1HxcpJYsbp1vYxVc6
   secret: a secret something defined
   deployCommand: './hexo-deploy.sh'
 
@@ -88,7 +88,7 @@ admin:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
     - type: git
-      repository: https://github.com/wuyuedefeng/wuyuedefeng.github.io.git
+      repository: https://github.com/guoyoujin/guoyoujin.github.io.git
       branch: master
 #      host: 123.56.69.8
 #      user: nodeChina

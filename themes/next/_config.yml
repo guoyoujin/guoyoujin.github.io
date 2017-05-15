@@ -17,7 +17,7 @@ rss:
 #since: 2015
 
 # icon between year and author @Footer
-authoricon: wsen
+authoricon: TryCatch
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -134,7 +134,11 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 #social:
   #LinkLabel: Link
-
+social:
+  GitHub: https://github.com/guoyoujin
+  Twitter: https://twitter.com/guoyoujin
+  微博: http://weibo.com/3625387784
+  豆瓣: http://douban.com/people/your-user-name
 
 # Social Links Icons
 # Icon Mapping:
@@ -147,7 +151,7 @@ social_icons:
   # KeyMapsToSocalItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
   Twitter: twitter
-  Weibo: weibo
+  微博: weibo
 
 
 # Sidebar Avatar
@@ -272,7 +276,7 @@ mathjax:
 #baidu_analytics:
 
 # Duoshuo ShortName
-duoshuo_shortname: wuyuedefenggithubio
+duoshuo_shortname: guoyoujingithubio
 
 # Disqus
 #disqus_shortname:
