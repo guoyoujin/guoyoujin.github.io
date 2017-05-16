@@ -134,3 +134,9 @@ baidu_url_submit:
   token: uSnj5Dx11111111 ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
   path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
 ```
+##### 百度统计   http://tongji.baidu.com/sc-web
+在 them/next/_config.yml文件里面，填写以下数据
+```
+# Baidu Analytics ID
+baidu_analytics: 658ef8640c9dcf118730ad9d90
+```

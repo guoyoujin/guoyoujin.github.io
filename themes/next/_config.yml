@@ -273,7 +273,9 @@ mathjax:
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 658ef8640c9dcf118730ad9d90601b4c
+
+baidu_site_verification: nYL0TO05LA
 
 # Duoshuo ShortName
 duoshuo_shortname: guoyoujingithubio
