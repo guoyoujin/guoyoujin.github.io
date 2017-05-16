@@ -1,1 +1,1 @@
-http://blog.itrydo.com/2017/05/16/git命令大全/
+http://blog.itrydo.com/2017/05/16/hexo搭建blog系统/
