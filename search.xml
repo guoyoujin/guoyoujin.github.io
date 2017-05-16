@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[git常用命令]]></title>
+    <url>%2F2017%2F05%2F06%2Fgit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[命令大全 删除git代码管理中已经提交的服务器的提交123#git reset --hard HEAD~1 # 取消当前版本之前的一次提交git reset --hard HEAD~2 # 取消当前版本之前的两次提交git push origin HEAD --force # 强制提交到远程版本库，从而删除之前的两次提交数据 在mac中自动保存git用户名与密码如此简单在Mac OS X中这个操作竟然如此简单。只需在Terminal中输入如下的命令：1git config --global credential.helper osxkeychain 然后在git操作时只要输入一次用户名与密码，以后就不用输入了。 【参考资料】 Git keeps prompting me for password]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ssh]]></title>
+    <url>%2F2017%2F04%2F28%2Fssh%2F</url>
+    <content type="text"><![CDATA[Generating a new SSH key 生成秘钥 1$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 把公钥文件id_rsa.pub拷贝到需要登录的服务器上 登录远程服务器，在用户根目录下新建.ssh文件夹（如果不存在），在其中新建authorized_keys文件（如果不存在），把id_rsa.pub添加到authorized_keys文件中 退出当前远程登录，之后就可以不使用密码远程登录了]]></content>
+      <categories>
+        <category>shell</category>
+      </categories>
+      <tags>
+        <tag>install ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ruby基础]]></title>
+    <url>%2F2017%2F03%2F23%2Fruby%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[闭包use block123456def foo a = 3 yield aendfoo &#123;|b| puts b&#125; use &amp; and call123456def foo(&amp;block) a = 2 block.call(a)endfoo &#123;|a| puts a&#125; procproc可以看做是block的对象表示，类名为Proc1proc = Proc.new &#123;|x| x*2&#125; lambdalambda的class也是Proc1lambda = lambda &#123;|x| x*2&#125; lambda和proc的区别是： 实例化方式的不同而已，proc更像对象，lambda更像方法 1234567891011121314151617## diff1p = Proc.new &#123;|x, y| p x,y&#125;p.call(1) # 1, nilp.call(1,2) # 1,2p.cal(1,2,3) # 1,2l = lambda &#123;|x,y| p x,y&#125;l.call(1) # errl.call(1,2) # 1,2l.call(1,2,3) # err## diff2p = Proc.new &#123;|x| return x&#125;p.call(1) # errl = lambda &#123;|x| return x&#125;p.call(1) # 1 Class基础类示例1234567891011121314151617181920212223242526272829class Point attr_accessor :x # getter setter attr_reader :y # getter @@origin = 0 ORIGIN = 2 # 常量 # 取值 Point::ORIGIN def initialize(x = 0, y = 0) # @x 实例变量 # @@x 类变量 # $x 全局变量 # x 局部变量 @x = x @y = y end # 实例方法 def +(p2) Point.new(x+p2.x, y+p2.y) end # 类方法 def self.foo end # 内部定义的都是类方法 class &lt;&lt; self def bar end endend 继承 public visibility: in/out inheritance: Yes call an obj: Yes protected visibility: within inheritance: Yes call an obj: Yes private visibility: within inheritance: Yes call an obj: No 1234567class Point3D &lt; Point def initialize(x=0, y=0, z=0) # @x, @y, @z = x, y , z super(x, y) @z = z endend module include 引入成实例方法 extend 引入成类方法123456789101112131415161718module Helper # instance method def test end # 类方法 module ClassMethods def test2 end end # hook klass为引入的类这里是 Point def self.included(klass) klass.extend ClassMethods endend# Point classclass Point include Helperend 方法优先级：singleton中的方法 - 实例方法 - module方法 - 父类实例方法 异常处理产生： raise处理： rescue12345678def foo begin # raise &quot;boom in foo&quot; raise TypeError, &quot;boom in foo&quot;, caller rescue =&gt; e puts e endend 枚举和比较模块Comparable12345678910class People attr_reader :name include Comparable def initialize name @name = name end def &lt;=&gt; other self.name &lt;=&gt; other.name endend Enumerable12345678910111213class People attr_reader :people include Enumerable def initialize people @people = people end def each raise &quot;please provide a block&quot; unless block_given? people.each do |person| yield person end endend 正则表达式生成正则的方法 /ruby/ %r{ruby} Regexp.new 使用123&quot;ruby&quot; =~ /ruby/ # 0&quot;ruby&quot;.match(/ru/) # ru&quot;ruby&quot;.gsub!(/r/, i) # iuby 正则编写测试网站123456789101112131415161718192021222324252627282930[abc] A single character of: a, b, or c[^abc] Any single character except: a, b, or c[a-z] Any single character in the range a-z[a-zA-Z] Any single character in the range a-z or A-Z^ Start of line$ End of line\A Start of string\z End of string. Any single character\s Any whitespace character\S Any non-whitespace character\d Any digit\D Any non-digit\w Any word character (letter, number, underscore)\W Any non-word character\b Any word boundary(...) Capture everything enclosed(a|b) a or ba? Zero or one of aa* Zero or more of aa+ One or more of aa&#123;3&#125; Exactly 3 of aa&#123;3,&#125; 3 or more of aa&#123;3,6&#125; Between 3 and 6 of aoptions: i case insensitive m make dot match newlines x ignore whitespace in regex o perform #&#123;...&#125; substitutions only once 时间、日期 DateTime &lt; Date Time # core library1234# 设置环境变量time zoneENV[&apos;TZ&apos;] = &apos;Asia/Shanghai&apos;# 或者Time.now.new_offset(Rational(8,24)) 文件操作file-doc 2.2.0 多线程示例12345678910111213141516171819def foo Thread.current[&apos;a&apos;] = 1 10.times do puts &apos;foo&apos; endenddef bar 10.times do puts &apos;bar&apos; endendt1 = Thread.new &#123;foo()&#125;t2 = Thread.new &#123;bar()&#125;t1.joint2.join # 这里主线程等待t1,t2执行完成，才继续主线程执行，否则主线程停止，子线程将被释放puts t1[&apos;a&apos;] # 1 Thread.new 创建线程 t1.priority = -1 t1.priority = 1 # 设置优先 t1.join 开始执行t1线程,主线程等待t1完成 Thread.current # 当前线程对象 Thread.abort_on_exception = true # 一个线程异常，所有线程都退出 mutex 123456789101112mutex = Mutex.newcount1 = count2 = 0Thread.new doloop do mutex.synchronize do # 类似ios的线程锁！ count1 += 1 count2 += 1 end endendsleep(1)mutex.lock 元编程（metaprogramming）eval 12eval &quot;1 + 1&quot;eval &quot;def foo; puts &apos;foo&apos;; end&quot; instance_eval 12String.instance_eval &quot;def foo; puts &apos;instance_eval foo&apos;; end&quot;String.foo #输出 instance_eval foo class_eval 123String.class_eval &quot;def foo; puts &apos;class_eval foo&apos;; end&quot;str = &apos;abc&apos;str.foo #输出： class_eval foo define_method 123define_method(:foo) &#123; puts &apos;abc&apos; &#125;# 带一个参数的方法定义define_method(:foo) &#123;|arg| puts arg &#125; 12345def method_missing method_nameself.class.send(:define_method, method_name)&#123; puts method_name &#125;end 编写gem 封装class module 讲文件放到lib test bin等目录中 编写gemspec文件 gem build gemspec_file 发布gem rubygems.org注册账号 设置账号与电脑绑定 gem push gem_name]]></content>
+      <categories>
+        <category>ruby</category>
+      </categories>
+      <tags>
+        <tag>ruby</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ruby环境搭建]]></title>
+    <url>%2F2017%2F03%2F04%2Fruby%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[安装配置rvm ruby .. ruby-china wike RVM安装ruby查看安装的ruby1rvm list 安装指定版本ruby1rvm install ruby 2.2.2 使用制定版本ruby1rvm use 2.2.2 gem源更换查看所有gem源1$ gem sources -l 移除一个gem源1$ gem sources --remove https://rubygems.org/ 添加一个gem源1$ gem source -a https://gems.ruby-china.org 安装railsgem安装rails1$ gem install rails -v 4.2.3 rails创建项目1$ rails new [myPro] [--skip-bundle] 路由配置eg:1234567891011121314151617181920# 手动配置posts的show路由 as配置路由名称 # get &apos;posts/:id&apos;, :to =&gt; &apos;posts#show&apos;, :as =&gt; &apos;show_post&apos; # 排除show路由 # resources :posts, :except =&gt; :show resources :posts do # posts/recent # get &apos;recent&apos;, :on =&gt; :collection # 集合路由 collection do # posts/recent get &apos;recent&apos; end # 成员路由 member do # posts/:id/recent get &apos;recent&apos; end end]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[redis的安装和配置]]></title>
+    <url>%2F2017%2F02%2F18%2Fredis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[【参考】 安装Redis123456789101112131415161718# 希望将redis安装到此目录 /usr/local/redis# 希望将安装包下载到此目录 /usr/local/src那么安装过程指令如下： $ mkdir /usr/local/redis $ cd /usr/local/src $ wget http://download.redis.io/releases/redis-3.0.7.tar.gz$ tar xzf redis-3.0.7.tar.gz$ cd redis-3.0.7$ make PREFIX=/usr/local/redis install #安装到指定目录中#如果make失败，一般是你们系统中还未安装gcc,那么可以通过yum安装： $ yum install gcc#在安装redis成功后，你将可以在/usr/local/redis看到一个bin的目录，里面包括了以下文件： redis-benchmark redis-check-aof redis-check-dump redis-cli redis-server 将Redis做成服务redis默认运行脚本 ps: /etc/init.d/目录下的脚本就类似与windows中的注册表，在系统启动的时候某些指定脚本将被执行 按以上步骤安装Redi时，其服务脚本位于：/usr/local/src/redis-3.0.7/utils/redis_init_script 拷贝脚本到/etc/init.d/目录下，并命名为redis1$ [sudo] cp /usr/local/src/redis-3.0.7/utils/redis_init_script /etc/init.d/redis 对启动脚本进行修改打开redis脚本文件，并进行编辑123456789$ vim /etc/init.d/redis#修改到正确的路径#EXEC=/usr/local/bin/redis-serverEXEC=/usr/local/redis/bin/redis-server#CLIEXEC=/usr/local/bin/redis-cliCLIEXEC=/usr/local/redis/bin/redis-cli# 设置配置文件路径#CONF="/etc/redis/$&#123;REDISPORT&#125;.conf" 配置Redis启动信息在上面shell脚本指定的配置目录中创建文件，并进行编辑。更详细配置参考这里1234567891011121314151617181920212223242526272829303132$ [sudo] mkdir /etc/redis/$ [sudo] vim /etc/redis/6379.conf写入配置:#!/bin/sh# 是否以后台进程运行，默认为nodaemonize yes# 如以后台进程运行，则需指定一个pid，默认为/var/run/redis.pidpidfile /var/run/redis.pid# 监听端口，默认为6379port 6379#绑定主机IP，默认值为127.0.0.1（注释）bind 127.0.0.1# 超时时间，默认为300（秒）timeout 300# 日志记录等级，有4个可选值，debug，verbose（默认值），notice，warningloglevel verbose#可用数据库数，默认值为16，默认数据库为0databases 16#指出在多长时间内，有多少次更新操作，就将数据同步到数据文件。这个可以多个条件配合，比如默认配置文件中的设置，就设置了三个条件。# 900秒（15分钟）内至少有1个key被改变save 900 1# 300秒（5分钟）内至少有10个key被改变save 300 10# 存储至本地数据库时是否压缩数据，默认为yesrdbcompression yes# 本地数据库文件名，默认值为dump.rdbdbfilename dump.rdb# 本地数据库存放路径，默认值为 ./dir /usr/apps/redis_db#开启之后，redis将在每100毫秒时使用1毫秒的CPU时间来对redis的hash表进行重新hash，可以降低内存的使用。当你的使 用场景中，有非常严格的实时性需要，不能够接受Redis时不时的对请求有2毫秒的延迟的话，把这项配置为no。如果没有这么严格的实时性要求，可以设置为yes，以便能够尽可能快的释放内存activerehashing yes 启动redis服务手动启动命令1$ service redis start 方便redis客户端的使用，可以将Redis的所在目录添加到系统参数PATH中 修改profile文件：/etc/profile 最文件最后一行添加export PATH=&quot;$PATH:/usr/local/redis/bin&quot; 应用配置执行12345678910$ . /etc/profile ``` * 至此可以直径调用redis-cli的命令了```bash$ redis-cli redis 127.0.0.1:6379&gt; auth superman OK redis 127.0.0.1:6379&gt; ping PONG redis 127.0.0.1:6379&gt;]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>install</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[软件注册码]]></title>
+    <url>%2F2017%2F02%2F18%2F%E8%BD%AF%E4%BB%B6%E6%B3%A8%E5%86%8C%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[sublime312345678910111213—– BEGIN LICENSE —–Michael BarnesSingle User LicenseEA7E-8213858A353C41 872A0D5C DF9B2950 AFF6F667C458EA6D 8EA3C286 98D1D650 131A97ABAA919AEC EF20E143 B361B1E7 4C8B7F04B085E65E 2F5F5360 8489D422 FB8FC1AA93F6323C FD7F7544 3F39C318 D95E6480FCCC7561 8A4A1741 68FA4223 ADCEDE07200C25BE DBBC4855 C4CFB774 C5EC138C0FEC1CEF D9DCECEC D3A5DAD1 01316C36—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Alexey PlutalovSingle User LicenseEA7E-8607763DC19CC1 134CDF23 504DC871 2DE5CE55585DC8A6 253BB0D9 637C87A2 D8D0BA85AAE574AD BA7D6DA9 2B9773F2 324C5DEF17830A4E FBCF9D1D 182406E9 F883EA87E585BBA1 2538C270 E2E857C2 194283CA7234FF9E D0392F93 1D16E021 F191491763909E12 203C0169 3F08FFC8 86D06EA873DDAEF0 AC559F30 A6A67947 B60104C6—— END LICENSE —— webstormlicense server123http://idea.imsxm.com/http://xidea.onlinehttp://idea.iteblog.com/key.php]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>注册码</tag>
+      </tags>
+  </entry>
+</search>
