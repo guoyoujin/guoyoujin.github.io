@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[git常用命令]]></title>
-    <url>%2F2017%2F05%2F06%2Fgit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[命令大全 删除git代码管理中已经提交的服务器的提交123#git reset --hard HEAD~1 # 取消当前版本之前的一次提交git reset --hard HEAD~2 # 取消当前版本之前的两次提交git push origin HEAD --force # 强制提交到远程版本库，从而删除之前的两次提交数据 在mac中自动保存git用户名与密码如此简单在Mac OS X中这个操作竟然如此简单。只需在Terminal中输入如下的命令：1git config --global credential.helper osxkeychain 然后在git操作时只要输入一次用户名与密码，以后就不用输入了。 【参考资料】 Git keeps prompting me for password]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[ssh]]></title>
     <url>%2F2017%2F04%2F28%2Fssh%2F</url>
     <content type="text"><![CDATA[Generating a new SSH key 生成秘钥 1$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; 把公钥文件id_rsa.pub拷贝到需要登录的服务器上 登录远程服务器，在用户根目录下新建.ssh文件夹（如果不存在），在其中新建authorized_keys文件（如果不存在），把id_rsa.pub添加到authorized_keys文件中 退出当前远程登录，之后就可以不使用密码远程登录了]]></content>
