@@ -1,7 +1,11 @@
 title: hexo  hexo-theme-next 搭建blog系统
 author: TryCatch
-date: 2017-05-16 11:29:35
 tags:
+  - js
+  - hexo
+categories:
+  - blog
+date: 2017-05-16 11:29:00
 ---
 ##### 下载安装hexo
 
