@@ -13,6 +13,11 @@ http://charlesproxy.iiilab.com/4_1_4/charles.jar
 https://raw.githubusercontent.com/guoyoujin/guoyoujin.github.io/develop/download/charles.jar
 
 
+帮助地址
+
+http://charles.iiilab.com/
+
+
 安装之后打开Charles即可
 
 
@@ -32,3 +37,7 @@ https://raw.githubusercontent.com/guoyoujin/guoyoujin.github.io/develop/download
 ![png](https://raw.githubusercontent.com/guoyoujin/guoyoujin.github.io/develop/images/charles_4.png)
 
 ![png](https://raw.githubusercontent.com/guoyoujin/guoyoujin.github.io/develop/images/charles_5.png)
+
+#####  手机安装证书
+在Safari浏览器里面输入网址 ：chls.pro/ssl按照提示进行操作
+
