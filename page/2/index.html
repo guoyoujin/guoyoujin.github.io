@@ -267,6 +267,199 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://blog.itrydo.com/2017/05/16/hexo搭建blog系统/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="TryCatch">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="TryCatch Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="TryCatch Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/16/hexo搭建blog系统/" itemprop="url">
+                  hexo  hexo-theme-next 搭建blog系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-16T11:29:00+08:00">
+                2017-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/16/hexo搭建blog系统/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/16/hexo搭建blog系统/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/05/16/hexo搭建blog系统/" class="leancloud_visitors" data-flag-title="hexo  hexo-theme-next 搭建blog系统">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="下载安装hexo"><a href="#下载安装hexo" class="headerlink" title="下载安装hexo"></a>下载安装hexo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<p>安装好hexo以后，在终端输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo</div></pre></td></tr></table></figure></p>
+<p>得到如下信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">➜  guoyoujin.github.io git:(develop) ✗ hexo</div><div class="line">Usage: hexo &lt;command&gt;</div><div class="line">Commands:</div><div class="line">  clean     Removed generated files and cache.</div><div class="line">  config    Get or set configurations.</div><div class="line">  deploy    Deploy your website.</div><div class="line">  generate  Generate static files.</div><div class="line">  ----------------------部分省略</div><div class="line">or you can check the docs: http://hexo.io/docs/</div></pre></td></tr></table></figure></p>
+<h5 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 建立一个博客文件夹，并初始化博客，guoyoujin.github.io为文件夹的名称，可以随便起名字</div><div class="line">$ hexo init guoyoujin.github.io</div><div class="line">// 进入博客文件夹，guoyoujin.github.io为文件夹的名称</div><div class="line">$ cd guoyoujin.github.io</div><div class="line">// node.js的命令，根据博客既定的dependencies配置安装所有的依赖包</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<h5 id="hexo-next-them-使用手册"><a href="#hexo-next-them-使用手册" class="headerlink" title="hexo next them 使用手册"></a>hexo next them 使用手册</h5><p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">http://theme-next.iissnan.com/getting-started.html</a></p>
+<h5 id="安装next主题"><a href="#安装next主题" class="headerlink" title="安装next主题"></a>安装next主题</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
+<h5 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h5><p>与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">启用 NexT 主题</div><div class="line">theme: next</div></pre></td></tr></table></figure></p>
+<p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存。</p>
+<h5 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h5><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是 hexo s –debug。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s --debug</div></pre></td></tr></table></figure></p>
+<p>在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<p>此时即可使用浏览器访问 <a href="http://localhost:4000，检查站点是否正确运。不出所料应该已经能看到样式了" target="_blank" rel="external">http://localhost:4000，检查站点是否正确运。不出所料应该已经能看到样式了</a></p>
+<h5 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h5><p>选择 Scheme</p>
+<p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
+<p>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白<br>Mist - Muse 的紧凑版本，整洁有序的单栏外观<br>Pisces - 双栏 Scheme，小家碧玉似的清新<br>Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。</p>
+<p>选择 Pisces Scheme<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#scheme: Muse</div><div class="line">#scheme: Mist</div><div class="line">scheme: Pisces</div></pre></td></tr></table></figure></p>
+<h5 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h5><p>编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">language: zh-Hans</div></pre></td></tr></table></figure></p>
+<h5 id="hexo-admin配置"><a href="#hexo-admin配置" class="headerlink" title="hexo-admin配置"></a>hexo-admin配置</h5><p><a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="external">https://github.com/jaredly/hexo-admin</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-admin</div><div class="line">hexo server -d</div><div class="line">open http://localhost:4000/admin/</div></pre></td></tr></table></figure></p>
+<p>密码设置，需要在根母目录下的/_config.yml文件里面加入如下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">admin:</div><div class="line">  username: guoyoujin</div><div class="line">  password_hash: $2a$10$8f0CO288aEgpb0BQk0mAEOIDwPS.s6nl703xL6PLTVzM.758x8xsi</div><div class="line">  secret: a secret something</div></pre></td></tr></table></figure></p>
+<p>注意上面的password_hash需要使用nodejs语语法生成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install bcrypt-nodejs --save</div><div class="line">$ node</div><div class="line">&gt; const bcrypt = require(&apos;bcrypt-nodejs&apos;)</div><div class="line">&gt; bcrypt.hashSync(&apos;your password secret here!&apos;)</div><div class="line">//=&gt; &apos;$2a$10$8f0CO288aEgpb0BQk0mAEOIDwPS.s6nl703xL6PLTVzM.758x8xsi&apos;</div></pre></td></tr></table></figure></p>
+<p>把上面输出的值替换成password_hash的值即可</p>
+<h5 id="开启baidu站点收录"><a href="#开启baidu站点收录" class="headerlink" title="开启baidu站点收录"></a>开启baidu站点收录</h5><p>链接地址: <a href="http://zhanzhang.baidu.com/site" target="_blank" rel="external">http://zhanzhang.baidu.com/site</a></p>
+<p>添加站点: guoyoujin.github.io</p>
+<p>进行验证:<br><img src="https://raw.githubusercontent.com/guoyoujin/guoyoujin.github.io/develop/images/baidu-site-verification-content.png" alt="png"></p>
+<p>注意上面的content的值有用，需要写入/them/next/_config.yml里面，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">baidu_site_verification: C5V7yJu5y2</div></pre></td></tr></table></figure></p>
+<p>完成以上步骤之后，部署一下，点击完成验证，即可验证成功</p>
+<h5 id="Hexo插件之百度主动提交链接"><a href="#Hexo插件之百度主动提交链接" class="headerlink" title="Hexo插件之百度主动提交链接"></a>Hexo插件之百度主动提交链接</h5><p>百度地址： <a href="https://tongji.baidu.com" target="_blank" rel="external">https://tongji.baidu.com</a></p>
+<p>前提<br>您得注册百度站长工具，然后在工具-&gt;网页抓取-&gt;链接提交里找到你的密匙。<br><img src="https://raw.githubusercontent.com/guoyoujin/guoyoujin.github.io/develop/images/baidu_url_submit_token.png" alt="png"><br>首先，在Hexo根目录下，安装本插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-baidu-url-submit --save</div></pre></td></tr></table></figure></p>
+<p>在 them/next/_config.yml文件里面，填写以下数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">baidu_url_submit:</div><div class="line">  count: 1 ## 提交最新的一个链接</div><div class="line">  host: guoyoujin.github.io ## 在百度站长平台中注册的域名</div><div class="line">  token: uSnj5Dx11111111 ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!</div><div class="line">  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里</div></pre></td></tr></table></figure></p>
+<h5 id="百度统计-http-tongji-baidu-com-sc-web"><a href="#百度统计-http-tongji-baidu-com-sc-web" class="headerlink" title="百度统计   http://tongji.baidu.com/sc-web"></a>百度统计   <a href="http://tongji.baidu.com/sc-web" target="_blank" rel="external">http://tongji.baidu.com/sc-web</a></h5><p>在 them/next/_config.yml文件里面，填写以下数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Baidu Analytics ID</div><div class="line">baidu_analytics: 658ef8640c9dcf118730ad9d90</div></pre></td></tr></table></figure></p>
+<h5 id="leancloud阅读统计-https-leancloud-cn"><a href="#leancloud阅读统计-https-leancloud-cn" class="headerlink" title="leancloud阅读统计   https://leancloud.cn"></a>leancloud阅读统计   <a href="https://leancloud.cn" target="_blank" rel="external">https://leancloud.cn</a></h5><p>教程地址： <a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="external">https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://blog.itrydo.com/2017/05/16/git命令大全/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -473,7 +666,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
