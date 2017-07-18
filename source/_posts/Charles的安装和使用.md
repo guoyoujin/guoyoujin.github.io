@@ -6,7 +6,7 @@ tags:
 ##### 下载安装Charles
 这里提供下载安装地址
 
-https://raw.githubusercontent.com/guoyoujin/guoyoujin.github.io/develop/download/charles-proxy-4.1.4.dmg
+http://charlesproxy.iiilab.com/4_1_4/charles.jar
 
 破解文件
 

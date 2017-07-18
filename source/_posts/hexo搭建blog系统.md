@@ -104,7 +104,17 @@ $ node
 > bcrypt.hashSync('your password secret here!')
 //=> '$2a$10$8f0CO288aEgpb0BQk0mAEOIDwPS.s6nl703xL6PLTVzM.758x8xsi'
 ```
+
 把上面输出的值替换成password_hash的值即可
+
+
+##### 发布
+运行一下命令将Hexo上传到Github
+
+```
+$ hexo generate
+$ hexo deploy
+```
 
 ##### 开启baidu站点收录
 链接地址: http://zhanzhang.baidu.com/site
